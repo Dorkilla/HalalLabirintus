@@ -9,7 +9,7 @@ public class halalLabirintus extends javax.swing.JFrame {
     
     int felugroSzamolo = 0;
     
-    String oldal1 = "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal "+System.lineSeparator()+"oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették. "+System.lineSeparator()+"Ha kiakarod nyitni a dobozt, lapozz a 270-re. "+System.lineSeparator()+"Ha inkább tovább haladsz észak felé, lapozz a 66-ra.";
+    String oldal11 = "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal "+System.lineSeparator()+"oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették. "+System.lineSeparator()+"Ha kiakarod nyitni a dobozt, lapozz a 270-re. "+System.lineSeparator()+"Ha inkább tovább haladsz észak felé, lapozz a 66-ra.";
     String oldal56 = "Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve "+System.lineSeparator()+"tapasztalod, hogy lágy, szivacsszerű. Ha át szeretnél mászni rajta, lapozz a 373-ra. "+System.lineSeparator()+"Ha ketté akarod vágni a kardoddal, lapozz a 215-re.";
     String oldal66 = "Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat."+System.lineSeparator()+" A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani,"+System.lineSeparator()+" de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy. "+System.lineSeparator()+"Ha nyugat felé kívánsz menni, lapozz a 293-ra. "+System.lineSeparator()+"Ha keletnek, lapozz a 56-re.";
     String oldal137 = "Ahogy végigmész az alagúton, csodálkozva látod, hogy egy jókora vasharang csüng alá a boltozatról.";  
@@ -196,7 +196,7 @@ public class halalLabirintus extends javax.swing.JFrame {
 
         txtaElso.setColumns(20);
         txtaElso.setRows(5);
-        txtaElso.setText("Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, \namely a bal oldali fal mellett áll. Hat doboz van rajta, egyikükre a \nte neved festették. \nHa kiakarod nyitni a dobozt, lapozz a 270-re. \nHa inkább tovább haladsz észak felé, lapozz a 66-ra.");
+        txtaElso.setText("--");
         jScrollPane3.setViewportView(txtaElso);
 
         btnElsoKinyitom.setText("Kinyitom a dobozt");
@@ -272,25 +272,111 @@ public class halalLabirintus extends javax.swing.JFrame {
     }//GEN-LAST:event_btnKezdesActionPerformed
 
     private void btnElsoKinyitomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoKinyitomMouseClicked
-      Integer gombSzamolo=0;
-      gombSzamolo+=1;
-      felugroSzamolo+=1;
-        if (felugroSzamolo == 1){
-            int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
-            JOptionPane.showMessageDialog(null,oldal270);
-        }  
-        else if (gombSzamolo == 1){
+      Integer gombSzamolo=1;
+//      gombSzamolo+=1;
+//      felugroSzamolo+=1;
+//        if (felugroSzamolo == 1){
+//            int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
+//            JOptionPane.showMessageDialog(null,oldal270);
+//        }  
+        
+        
+        
+        
+//        if (gombSzamolo == oldal66) {
+//            btnElsoKinyitom.setText("Nyugat fele");
+//            btnElsoTovabb.setText("Kelet fele");
+//        } else if (currentPage == 122) {
+//            nextPageButton.setText("Different Next Page");
+//            backButton.setText("Different Previous Page");
+//        }
+//       
+        
+//11=1
+//56=2
+//66=3
+//137=4
+//215=5
+//270=6
+//293=7
+//373=8
+//387=9
+
+        if (gombSzamolo == 1) {
+            txtaElso.setText(oldal11);
+            btnElsoKinyitom.setText("Kinyitom a dobozt");
+            btnElsoTovabb.setText("Tovább haladok");
+            if (btnElsoKinyitom.isSelected()){
+                gombSzamolo+=2;
+                felugroSzamolo+=1;
+                if (felugroSzamolo == 1){
+                    int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
+                    JOptionPane.showMessageDialog(null,oldal270);
+                }                    
+            }
+        }
+
+        if (gombSzamolo == 3) {
             txtaElso.setText(oldal66);
-           btnElsoKinyitom.setText("Nyugat fele");
-           btnElsoTovabb.setText("Kelet fele");
-         }   
-                
-        else if (gombSzamolo == 2) {
+            btnElsoKinyitom.setText("Nyugat fele");
+            btnElsoTovabb.setText("Kelet fele");
+            if (btnElsoKinyitom.isSelected()){
+                gombSzamolo+=4;
+            }
+        }
+        
+        
+        if (gombSzamolo == 7) {
             txtaElso.setText(oldal293);
             btnElsoKinyitom.setText("Nyugat fele");
             btnElsoTovabb.setText("Észak fele");
-      
+            if (btnElsoKinyitom.isSelected()){
+                //vége
+            }
         }
+        
+        if (gombSzamolo == 2) {
+            txtaElso.setText(oldal56);
+            btnElsoKinyitom.setText("Átmászom");
+            btnElsoTovabb.setText("Kettévágom");
+            if (btnElsoKinyitom.isSelected()){
+                gombSzamolo+=6;
+                if (gombSzamolo == 8) {
+                    int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
+                    JOptionPane.showMessageDialog(null,oldal373);
+                    //  vége
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+//        gombSzamolo+=1;
+//        if (gombSzamolo == 2){ 
+//            txtaElso.setText(oldal66);
+//            btnElsoKinyitom.setText("Nyugat fele");
+//            btnElsoTovabb.setText("Kelet fele");
+//        }
+        
+        
+        
+//        else if (gombSzamolo == 1){
+//            txtaElso.setText(oldal66);
+//           btnElsoKinyitom.setText("Nyugat fele");
+//           btnElsoTovabb.setText("Kelet fele");
+//         }   
+//                
+//        else if (gombSzamolo == 2) {
+//            txtaElso.setText(oldal293);
+//            btnElsoKinyitom.setText("Nyugat fele");
+//            btnElsoTovabb.setText("Észak fele");
+//      
+//        }
         
       
         
@@ -314,14 +400,50 @@ public class halalLabirintus extends javax.swing.JFrame {
     }//GEN-LAST:event_btnElsoKinyitomMouseClicked
 
     private void btnElsoTovabbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoTovabbMouseClicked
+        Integer gombSzamolo=1;
+//        gombSzamolo+=1;
         
-        txtaElso.setText(oldal66);
-        btnElsoKinyitom.setText("Nyugat fele");
-        btnElsoTovabb.setText("Kelet fele");
         
-        txtaElso.setText(oldal56);
-        btnElsoKinyitom.setText("Átmászom");
-        btnElsoTovabb.setText("Kettévágom");
+        if (gombSzamolo == 1) {
+            txtaElso.setText(oldal11);
+            btnElsoKinyitom.setText("Kinyitom a dobozt");
+            btnElsoTovabb.setText("Tovább haladok");
+            if (btnElsoTovabb.isSelected()){
+                    gombSzamolo+=2;
+                }
+        }
+        
+        if (gombSzamolo == 3) {
+            txtaElso.setText(oldal66);
+            btnElsoKinyitom.setText("Nyugat fele");
+            btnElsoTovabb.setText("Kelet fele");
+            if (btnElsoTovabb.isSelected()){
+                gombSzamolo-=1;
+            }
+        }
+        
+         if (gombSzamolo == 2) {
+            txtaElso.setText(oldal56);
+            btnElsoKinyitom.setText("Átmászom");
+            btnElsoTovabb.setText("Kettévágom");
+            if (btnElsoTovabb.isSelected()){
+                gombSzamolo+=3;
+            }
+        }
+        
+        if (gombSzamolo == 5) {
+            txtaElso.setText(oldal215);
+            //vége
+        }
+         
+        
+//        txtaElso.setText(oldal66);
+//        btnElsoKinyitom.setText("Nyugat fele");
+//        btnElsoTovabb.setText("Kelet fele");
+//        
+//        txtaElso.setText(oldal56);
+//        btnElsoKinyitom.setText("Átmászom");
+//        btnElsoTovabb.setText("Kettévágom");
         
         
     }//GEN-LAST:event_btnElsoTovabbMouseClicked

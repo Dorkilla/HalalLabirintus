@@ -373,7 +373,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="Miut&#xe1;n &#xf6;t percet haladt&#xe1;l lassan az alag&#xfa;tban, egy k&#x151;asztalhoz &#xe9;rsz, &#xa;amely a bal oldali fal mellett &#xe1;ll. Hat doboz van rajta, egyik&#xfc;kre a &#xa;te neved festett&#xe9;k. &#xa;Ha kiakarod nyitni a dobozt, lapozz a 270-re. &#xa;Ha ink&#xe1;bb tov&#xe1;bb haladsz &#xe9;szak fel&#xe9;, lapozz a 66-ra."/>
+                    <Property name="text" type="java.lang.String" value="--"/>
                   </Properties>
                 </Component>
               </SubComponents>
