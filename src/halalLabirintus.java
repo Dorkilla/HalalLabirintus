@@ -1,7 +1,9 @@
 import java.awt.HeadlessException;
+import java.awt.List;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 
 public class halalLabirintus extends javax.swing.JFrame {
@@ -19,13 +21,39 @@ public class halalLabirintus extends javax.swing.JFrame {
     String oldal373 = "Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, "+System.lineSeparator()+"mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta. "+System.lineSeparator()+"Megkönnyebbülten érsz újra szilárd talajra, és fordulsz kelet felé.";
     String oldal387 = "Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. "+System.lineSeparator()+"Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, "+System.lineSeparator()+"és mindennek kinéz, csak barátságosnak nem. Előhúzod kardodat, és felkészülsz, "+System.lineSeparator()+"hogy megküzdj a Barlangi Emberrel.";
     
+    ArrayList<Oldal> oldalLista;
+    Oldal jelenlegi = null;
     
     public halalLabirintus() {
+        oldalLista = new ArrayList<Oldal>();
+        oldalLista.add(new Oldal(
+                "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal "+System.lineSeparator()+"oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették. "+System.lineSeparator()+"Ha kiakarod nyitni a dobozt, lapozz a 270-re. "+System.lineSeparator()+"Ha inkább tovább haladsz észak felé, lapozz a 66-ra.",
+                1, 66, "Kinyitod a dobozt",
+                270, "Tovább haladok"));
+        oldalLista.add(new Oldal(
+                "Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat."+System.lineSeparator()+" A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani,"+System.lineSeparator()+" de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy. "+System.lineSeparator()+"Ha nyugat felé kívánsz menni, lapozz a 293-ra. "+System.lineSeparator()+"Ha keletnek, lapozz a 56-re.",
+                66, 293, "elsőt",
+                56, "második"));
+        oldalLista.add(new Oldal(
+                "A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól."+System.lineSeparator()+"Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet: "+System.lineSeparator()+"- „Jól tetted. Legalább volt annyi eszed, hogy megállj és elfogadd az ajándékot. Most azt tanácsolom neked, "+System.lineSeparator()+"hogy keress és használj különféle tárgyakat, ha sikerrel akarsz áthaladni Halállabirintusomon.” "+System.lineSeparator()+"Azaláírás Szukumvit. Megjegyzed a tanácsot, apródarabokra téped a pergament, "+System.lineSeparator()+"és tovább mészészak felé.",
+                270, 78, "első",
+                79, "masodik"));
         initComponents();
-        
+        jelenlegi = getOldalByOldalszam(1);
+        txtaElso.setText(jelenlegi.GetSzoveg());
+        btnElsoLehetoseg.setText(jelenlegi.getElsoLehetosegSzoveg());
+        btnMasodikLehetoseg.setText(jelenlegi.getMasodikLehetosegSzoveg());
         //String[] szovegek = {""}
     }
 
+    public Oldal getOldalByOldalszam(int oldalszam) {
+        for (int i = 0; i < oldalLista.size(); ++i) {
+            if (oldalszam == oldalLista.get(i).GetOldalszam()) {
+                return oldalLista.get(i);
+            }
+        }
+        return null;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -56,8 +84,8 @@ public class halalLabirintus extends javax.swing.JFrame {
         pnlJatek = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtaElso = new javax.swing.JTextArea();
-        btnElsoKinyitom = new javax.swing.JButton();
-        btnElsoTovabb = new javax.swing.JButton();
+        btnElsoLehetoseg = new javax.swing.JButton();
+        btnMasodikLehetoseg = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblHatter = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -199,17 +227,17 @@ public class halalLabirintus extends javax.swing.JFrame {
         txtaElso.setText("Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, \namely a bal oldali fal mellett áll. Hat doboz van rajta, egyikükre a \nte neved festették. \nHa kiakarod nyitni a dobozt, lapozz a 270-re. \nHa inkább tovább haladsz észak felé, lapozz a 66-ra.");
         jScrollPane3.setViewportView(txtaElso);
 
-        btnElsoKinyitom.setText("Kinyitom a dobozt");
-        btnElsoKinyitom.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnElsoLehetoseg.setText("Kinyitom a dobozt");
+        btnElsoLehetoseg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnElsoKinyitomMouseClicked(evt);
+                btnElsoLehetosegMouseClicked(evt);
             }
         });
 
-        btnElsoTovabb.setText("Tovább haladok");
-        btnElsoTovabb.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnMasodikLehetoseg.setText("Tovább haladok");
+        btnMasodikLehetoseg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnElsoTovabbMouseClicked(evt);
+                btnMasodikLehetosegMouseClicked(evt);
             }
         });
 
@@ -219,9 +247,9 @@ public class halalLabirintus extends javax.swing.JFrame {
             pnlJatekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlJatekLayout.createSequentialGroup()
                 .addGap(74, 74, 74)
-                .addComponent(btnElsoKinyitom)
+                .addComponent(btnElsoLehetoseg)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
-                .addComponent(btnElsoTovabb)
+                .addComponent(btnMasodikLehetoseg)
                 .addGap(56, 56, 56))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlJatekLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -235,8 +263,8 @@ public class halalLabirintus extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(pnlJatekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnElsoKinyitom)
-                    .addComponent(btnElsoTovabb))
+                    .addComponent(btnElsoLehetoseg)
+                    .addComponent(btnMasodikLehetoseg))
                 .addGap(40, 40, 40))
         );
 
@@ -271,8 +299,13 @@ public class halalLabirintus extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_btnKezdesActionPerformed
 
-    private void btnElsoKinyitomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoKinyitomMouseClicked
-      Integer gombSzamolo=0;
+    private void btnElsoLehetosegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoLehetosegMouseClicked
+        jelenlegi = getOldalByOldalszam(jelenlegi.GetElsoLehetoseg());
+        txtaElso.setText(jelenlegi.GetSzoveg());
+        btnElsoLehetoseg.setText(jelenlegi.getElsoLehetosegSzoveg());
+        btnMasodikLehetoseg.setText(jelenlegi.getMasodikLehetosegSzoveg());
+        /*
+        Integer gombSzamolo=0;
       gombSzamolo+=1;
       felugroSzamolo+=1;
         if (felugroSzamolo == 1){
@@ -281,16 +314,17 @@ public class halalLabirintus extends javax.swing.JFrame {
         }  
         else if (gombSzamolo == 1){
             txtaElso.setText(oldal66);
-           btnElsoKinyitom.setText("Nyugat fele");
-           btnElsoTovabb.setText("Kelet fele");
+           btnElsoLehetoseg.setText("Nyugat fele");
+           btnMasodikLehetoseg.setText("Kelet fele");
          }   
                 
         else if (gombSzamolo == 2) {
             txtaElso.setText(oldal293);
-            btnElsoKinyitom.setText("Nyugat fele");
-            btnElsoTovabb.setText("Észak fele");
+            btnElsoLehetoseg.setText("Nyugat fele");
+            btnMasodikLehetoseg.setText("Észak fele");
       
         }
+        */
         
       
         
@@ -311,20 +345,27 @@ public class halalLabirintus extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_btnElsoKinyitomMouseClicked
+    }//GEN-LAST:event_btnElsoLehetosegMouseClicked
 
-    private void btnElsoTovabbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoTovabbMouseClicked
+    private void btnMasodikLehetosegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMasodikLehetosegMouseClicked
+        jelenlegi = getOldalByOldalszam(jelenlegi.GetMasodikLehetoseg());
+        txtaElso.setText(jelenlegi.GetSzoveg());
+        btnElsoLehetoseg.setText(jelenlegi.getElsoLehetosegSzoveg());
+        btnMasodikLehetoseg.setText(jelenlegi.getMasodikLehetosegSzoveg());
         
+        /*
         txtaElso.setText(oldal66);
-        btnElsoKinyitom.setText("Nyugat fele");
-        btnElsoTovabb.setText("Kelet fele");
+        btnElsoLehetoseg.setText("Nyugat fele");
+        btnMasodikLehetoseg.setText("Kelet fele");
         
         txtaElso.setText(oldal56);
-        btnElsoKinyitom.setText("Átmászom");
-        btnElsoTovabb.setText("Kettévágom");
+        btnElsoLehetoseg.setText("Átmászom");
+        btnMasodikLehetoseg.setText("Kettévágom");
+        */
         
         
-    }//GEN-LAST:event_btnElsoTovabbMouseClicked
+        
+    }//GEN-LAST:event_btnMasodikLehetosegMouseClicked
     /*
     private void tovabb() throws HeadlessException {
        String uzenet = "A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól.\"+System.lineSeparator()+\"Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet:\"+System.lineSeparator()+ \"- „Jól tetted. Legalább volt annyi eszed, hogy megállj és elfogadd az ajándékot. Most azt tanácsolom neked, hogy keress és használj különféle tárgyakat, ha sikerrel akarsz áthaladni Halállabirintusomon.”\"+System.lineSeparator()+ \"Az aláírás Szukumvit. Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mész észak felé.";
@@ -373,10 +414,10 @@ public class halalLabirintus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnElsoKinyitom;
-    private javax.swing.JButton btnElsoTovabb;
+    private javax.swing.JButton btnElsoLehetoseg;
     private javax.swing.JButton btnKesz;
     private javax.swing.JButton btnKezdes;
+    private javax.swing.JButton btnMasodikLehetoseg;
     private javax.swing.JComboBox<String> cmbFaj;
     private javax.swing.JComboBox<String> cmbKaszt;
     private javax.swing.JComboBox<String> cmbNem;

@@ -334,9 +334,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="btnElsoKinyitom" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnElsoLehetoseg" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="197" max="32767" attributes="0"/>
-                      <Component id="btnElsoTovabb" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMasodikLehetoseg" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -353,8 +353,8 @@
                       <Component id="jScrollPane3" min="-2" pref="106" max="-2" attributes="0"/>
                       <EmptySpace pref="45" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnElsoKinyitom" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnElsoTovabb" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnElsoLehetoseg" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMasodikLehetoseg" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
@@ -378,20 +378,20 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btnElsoKinyitom">
+            <Component class="javax.swing.JButton" name="btnElsoLehetoseg">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kinyitom a dobozt"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnElsoKinyitomMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnElsoLehetosegMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnElsoTovabb">
+            <Component class="javax.swing.JButton" name="btnMasodikLehetoseg">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tov&#xe1;bb haladok"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnElsoTovabbMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnMasodikLehetosegMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
