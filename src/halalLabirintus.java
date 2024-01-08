@@ -10,8 +10,9 @@ public class halalLabirintus extends javax.swing.JFrame {
     //String elsozsoveg = ("")
     
     int felugroSzamolo = 0;
+    int gombSzamolo = 1;
     
-    String oldal1 = "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal "+System.lineSeparator()+"oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették. "+System.lineSeparator()+"Ha kiakarod nyitni a dobozt, lapozz a 270-re. "+System.lineSeparator()+"Ha inkább tovább haladsz észak felé, lapozz a 66-ra.";
+    String oldal11 = "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal "+System.lineSeparator()+"oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették. "+System.lineSeparator()+"Ha kiakarod nyitni a dobozt, lapozz a 270-re. "+System.lineSeparator()+"Ha inkább tovább haladsz észak felé, lapozz a 66-ra.";
     String oldal56 = "Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve "+System.lineSeparator()+"tapasztalod, hogy lágy, szivacsszerű. Ha át szeretnél mászni rajta, lapozz a 373-ra. "+System.lineSeparator()+"Ha ketté akarod vágni a kardoddal, lapozz a 215-re.";
     String oldal66 = "Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat."+System.lineSeparator()+" A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani,"+System.lineSeparator()+" de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy. "+System.lineSeparator()+"Ha nyugat felé kívánsz menni, lapozz a 293-ra. "+System.lineSeparator()+"Ha keletnek, lapozz a 56-re.";
     String oldal137 = "Ahogy végigmész az alagúton, csodálkozva látod, hogy egy jókora vasharang csüng alá a boltozatról.";  
@@ -114,7 +115,7 @@ public class halalLabirintus extends javax.swing.JFrame {
 
         txtaBevezeto.setColumns(20);
         txtaBevezeto.setRows(5);
-        txtaBevezeto.setText("Egy versenyre nevezel, aminek a lényege, hogy át kell kelni a halállabirintuson. \nA labirintusban tárgyakat találhatsz és szörnyekkel kell harcoljál.");
+        txtaBevezeto.setText("Egy versenyre nevezel, aminek a lényege, hogy át kell kelni a halállabirintuson. A labirintusban \ntárgyakat találhatsz és szörnyekkel kell harcoljál.");
         jScrollPane1.setViewportView(txtaBevezeto);
 
         txtfNev.setText("Add meg a neved!");
@@ -133,12 +134,8 @@ public class halalLabirintus extends javax.swing.JFrame {
         pnlKezdes.setLayout(pnlKezdesLayout);
         pnlKezdesLayout.setHorizontalGroup(
             pnlKezdesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlKezdesLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlKezdesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(102, Short.MAX_VALUE)
                 .addGroup(pnlKezdesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlKezdesLayout.createSequentialGroup()
                         .addComponent(lblJatekosnev)
@@ -148,13 +145,17 @@ public class halalLabirintus extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlKezdesLayout.createSequentialGroup()
                         .addComponent(btnKezdes)
                         .addGap(57, 57, 57))))
+            .addGroup(pnlKezdesLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlKezdesLayout.setVerticalGroup(
             pnlKezdesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlKezdesLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
                 .addGroup(pnlKezdesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfNev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblJatekosnev))
@@ -185,17 +186,17 @@ public class halalLabirintus extends javax.swing.JFrame {
             pnlKarakterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlKarakterLayout.createSequentialGroup()
                 .addGroup(pnlKarakterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlKarakterLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(pnlKarakterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cmbFaj, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbKaszt, 0, 171, Short.MAX_VALUE)
-                            .addComponent(cmbNem, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 127, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlKarakterLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnKesz, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                        .addGap(52, 52, 52))
+                    .addGroup(pnlKarakterLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(pnlKarakterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmbFaj, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbNem, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbKaszt, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -209,13 +210,13 @@ public class halalLabirintus extends javax.swing.JFrame {
                         .addContainerGap(47, Short.MAX_VALUE))
                     .addGroup(pnlKarakterLayout.createSequentialGroup()
                         .addComponent(cmbKaszt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(31, 31, 31)
                         .addComponent(cmbFaj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(cmbNem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnKesz)
-                        .addGap(30, 30, 30))))
+                        .addGap(26, 26, 26))))
         );
 
         jTabbedPane1.addTab("Karakter", pnlKarakter);
@@ -224,7 +225,7 @@ public class halalLabirintus extends javax.swing.JFrame {
 
         txtaElso.setColumns(20);
         txtaElso.setRows(5);
-        txtaElso.setText("Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, \namely a bal oldali fal mellett áll. Hat doboz van rajta, egyikükre a \nte neved festették. \nHa kiakarod nyitni a dobozt, lapozz a 270-re. \nHa inkább tovább haladsz észak felé, lapozz a 66-ra.");
+        txtaElso.setText("Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, \namely a bal oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették. \n\nHa kiakarod nyitni a dobozt, lapozz a 270-re. \nHa inkább tovább haladsz észak felé, lapozz a 66-ra.");
         jScrollPane3.setViewportView(txtaElso);
 
         btnElsoLehetoseg.setText("Kinyitom a dobozt");
@@ -247,13 +248,19 @@ public class halalLabirintus extends javax.swing.JFrame {
             pnlJatekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlJatekLayout.createSequentialGroup()
                 .addGap(74, 74, 74)
+<<<<<<< HEAD
                 .addComponent(btnElsoLehetoseg)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addComponent(btnMasodikLehetoseg)
+=======
+                .addComponent(btnElsoKinyitom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addComponent(btnElsoTovabb)
+>>>>>>> fb0444093b5a3221bd2f0e917661f09eaa5fddf2
                 .addGap(56, 56, 56))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlJatekLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
         pnlJatekLayout.setVerticalGroup(
@@ -271,7 +278,7 @@ public class halalLabirintus extends javax.swing.JFrame {
         jTabbedPane1.addTab("Játék", pnlJatek);
 
         getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(60, 60, 570, 280);
+        jTabbedPane1.setBounds(60, 60, 610, 280);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -299,6 +306,7 @@ public class halalLabirintus extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_btnKezdesActionPerformed
 
+<<<<<<< HEAD
     private void btnElsoLehetosegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoLehetosegMouseClicked
         jelenlegi = getOldalByOldalszam(jelenlegi.GetElsoLehetoseg());
         txtaElso.setText(jelenlegi.GetSzoveg());
@@ -310,10 +318,61 @@ public class halalLabirintus extends javax.swing.JFrame {
       felugroSzamolo+=1;
         if (felugroSzamolo == 1){
             int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
+=======
+    private void btnElsoKinyitomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoKinyitomMouseClicked
+//      int gombSzamolo=1;
+//      gombSzamolo+=1;
+//      felugroSzamolo+=1;
+//        if (felugroSzamolo == 1){
+//            int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
+//            JOptionPane.showMessageDialog(null,oldal270);
+//        }  
+        
+        
+        
+        
+//        if (gombSzamolo == oldal66) {
+//            btnElsoKinyitom.setText("Nyugat fele");
+//            btnElsoTovabb.setText("Kelet fele");
+//        } else if (currentPage == 122) {
+//            nextPageButton.setText("Different Next Page");
+//            backButton.setText("Different Previous Page");
+//        }
+//       
+        
+//11=1
+//56=2
+//66=3
+//137=4
+//215=5
+//270=6
+//293=7
+//373=8
+//387=9
+
+//            txtaElso.setText(oldal11);
+//            btnElsoKinyitom.setText("Kinyitom a dobozt");
+//            btnElsoTovabb.setText("Tovább haladok");
+//            gombSzamolo+=1;
+
+        if (gombSzamolo == 1) {
+           
+>>>>>>> fb0444093b5a3221bd2f0e917661f09eaa5fddf2
             JOptionPane.showMessageDialog(null,oldal270);
-        }  
-        else if (gombSzamolo == 1){
+            gombSzamolo+=2;
+//            if (btnElsoKinyitom.isSelected()){
+//                
+//                felugroSzamolo+=1;
+//                if (felugroSzamolo == 1){
+//                    int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
+//                    
+//                }                    
+//            }
+        }
+
+        else if (gombSzamolo == 3) {
             txtaElso.setText(oldal66);
+<<<<<<< HEAD
            btnElsoLehetoseg.setText("Nyugat fele");
            btnMasodikLehetoseg.setText("Kelet fele");
          }   
@@ -323,8 +382,73 @@ public class halalLabirintus extends javax.swing.JFrame {
             btnElsoLehetoseg.setText("Nyugat fele");
             btnMasodikLehetoseg.setText("Észak fele");
       
+=======
+            btnElsoKinyitom.setText("Nyugat fele");
+            btnElsoTovabb.setText("Kelet fele");
+            gombSzamolo+=4;
+//            if (btnElsoKinyitom.isSelected()){
+//                gombSzamolo+=4;
+//            }
+        }
+        
+        
+        else if (gombSzamolo == 7) {
+            txtaElso.setText(oldal293);
+            btnElsoKinyitom.setText("Nyugat fele");
+            btnElsoTovabb.setText("Észak fele");
+            JOptionPane.showMessageDialog(null,oldal137);
+            System.exit(0); 
+//            if (btnElsoKinyitom.isSelected()){
+//                //vége
+//            }
+>>>>>>> fb0444093b5a3221bd2f0e917661f09eaa5fddf2
         }
         */
+        
+        else if (gombSzamolo == 2) {
+            txtaElso.setText(oldal56);
+            btnElsoKinyitom.setText("Átmászom");
+            btnElsoTovabb.setText("Kettévágom");
+            JOptionPane.showMessageDialog(null,oldal373);
+            System.exit(0); 
+//            if (btnElsoKinyitom.isSelected()){
+//                gombSzamolo+=6;
+//                if (gombSzamolo == 8) {
+//                    int ikonTipus = JOptionPane.INFORMATION_MESSAGE;
+//                    JOptionPane.showMessageDialog(null,oldal373);
+//                    //  vége
+//                }
+//            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+//        gombSzamolo+=1;
+//        if (gombSzamolo == 2){ 
+//            txtaElso.setText(oldal66);
+//            btnElsoKinyitom.setText("Nyugat fele");
+//            btnElsoTovabb.setText("Kelet fele");
+//        }
+        
+        
+        
+//        else if (gombSzamolo == 1){
+//            txtaElso.setText(oldal66);
+//           btnElsoKinyitom.setText("Nyugat fele");
+//           btnElsoTovabb.setText("Kelet fele");
+//         }   
+//                
+//        else if (gombSzamolo == 2) {
+//            txtaElso.setText(oldal293);
+//            btnElsoKinyitom.setText("Nyugat fele");
+//            btnElsoTovabb.setText("Észak fele");
+//      
+//        }
         
       
         
@@ -347,6 +471,7 @@ public class halalLabirintus extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnElsoLehetosegMouseClicked
 
+<<<<<<< HEAD
     private void btnMasodikLehetosegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMasodikLehetosegMouseClicked
         jelenlegi = getOldalByOldalszam(jelenlegi.GetMasodikLehetoseg());
         txtaElso.setText(jelenlegi.GetSzoveg());
@@ -362,6 +487,78 @@ public class halalLabirintus extends javax.swing.JFrame {
         btnElsoLehetoseg.setText("Átmászom");
         btnMasodikLehetoseg.setText("Kettévágom");
         */
+=======
+    private void btnElsoTovabbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElsoTovabbMouseClicked
+//        int gombSzamolo=1;
+//        gombSzamolo+=1;
+        
+//            txtaElso.setText(oldal11);
+//            btnElsoKinyitom.setText("Kinyitom a dobozt");
+//            btnElsoTovabb.setText("Tovább haladok");    
+//            gombSzamolo+=1;
+
+        if (gombSzamolo == 1) {
+//            txtaElso.setText(oldal11);
+//            btnElsoKinyitom.setText("Kinyitom a dobozt");
+//            btnElsoTovabb.setText("Tovább haladok");
+            gombSzamolo+=2;
+//            if (btnElsoTovabb.isSelected()){
+//                    gombSzamolo+=2;
+//                }
+        }
+        
+        else if (gombSzamolo == 3) {
+            txtaElso.setText(oldal66);
+            btnElsoKinyitom.setText("Nyugat fele");
+            btnElsoTovabb.setText("Kelet fele");
+            gombSzamolo-=1;
+//            if (btnElsoTovabb.isSelected()){
+//                gombSzamolo-=1;
+//            }
+        }
+        
+        else if (gombSzamolo == 2) {
+            txtaElso.setText(oldal56);
+            btnElsoKinyitom.setText("Átmászom");
+            btnElsoTovabb.setText("Kettévágom");
+            JOptionPane.showMessageDialog(null,oldal215);
+            System.exit(0);
+//            if (btnElsoTovabb.isSelected()){
+//                gombSzamolo+=3;
+//            }
+        }
+        
+//        else if (gombSzamolo == 5) {
+//            txtaElso.setText(oldal215);
+//            //vége
+//        }
+         
+        else if (gombSzamolo == 7) {
+            txtaElso.setText(oldal293);
+            btnElsoKinyitom.setText("Nyugat fele");
+            btnElsoTovabb.setText("Észak fele");
+            gombSzamolo+=2;
+//            if (btnElsoKinyitom.isSelected()){
+//                //vége
+//            }
+        }
+        
+        else if (gombSzamolo == 9) {
+            txtaElso.setText(oldal387);
+            
+//            if (btnElsoKinyitom.isSelected()){
+//                //vége
+//            }
+        }
+        
+//        txtaElso.setText(oldal66);
+//        btnElsoKinyitom.setText("Nyugat fele");
+//        btnElsoTovabb.setText("Kelet fele");
+//        
+//        txtaElso.setText(oldal56);
+//        btnElsoKinyitom.setText("Átmászom");
+//        btnElsoTovabb.setText("Kettévágom");
+>>>>>>> fb0444093b5a3221bd2f0e917661f09eaa5fddf2
         
         
         

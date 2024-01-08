@@ -82,7 +82,7 @@
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="60" y="60" width="570" height="280"/>
+          <AbsoluteConstraints x="60" y="60" width="610" height="280"/>
         </Constraint>
       </Constraints>
 
@@ -105,13 +105,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="475" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="102" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblJatekosnev" min="-2" max="-2" attributes="0"/>
@@ -125,14 +120,19 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="557" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="51" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="65" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtfNev" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblJatekosnev" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -156,7 +156,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="Egy versenyre nevezel, aminek a l&#xe9;nyege, hogy &#xe1;t kell kelni a hal&#xe1;llabirintuson. &#xa;A labirintusban t&#xe1;rgyakat tal&#xe1;lhatsz &#xe9;s sz&#xf6;rnyekkel kell harcolj&#xe1;l."/>
+                    <Property name="text" type="java.lang.String" value="Egy versenyre nevezel, aminek a l&#xe9;nyege, hogy &#xe1;t kell kelni a hal&#xe1;llabirintuson. A labirintusban &#xa;t&#xe1;rgyakat tal&#xe1;lhatsz &#xe9;s sz&#xf6;rnyekkel kell harcolj&#xe1;l."/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -203,19 +203,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cmbFaj" max="32767" attributes="0"/>
-                                  <Component id="cmbKaszt" pref="171" max="32767" attributes="0"/>
-                                  <Component id="cmbNem" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" pref="127" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnKesz" min="-2" pref="101" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="cmbFaj" min="-2" pref="171" max="-2" attributes="0"/>
+                                  <Component id="cmbNem" min="-2" pref="171" max="-2" attributes="0"/>
+                                  <Component id="cmbKaszt" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="153" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
@@ -232,15 +232,15 @@
                               <Component id="jScrollPane2" min="-2" pref="174" max="-2" attributes="0"/>
                               <EmptySpace pref="47" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="cmbKaszt" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="cmbFaj" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="cmbNem" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnKesz" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -334,14 +334,20 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="btnElsoLehetoseg" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="197" max="32767" attributes="0"/>
                       <Component id="btnMasodikLehetoseg" min="-2" max="-2" attributes="0"/>
+=======
+                      <Component id="btnElsoKinyitom" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="237" max="32767" attributes="0"/>
+                      <Component id="btnElsoTovabb" min="-2" max="-2" attributes="0"/>
+>>>>>>> fb0444093b5a3221bd2f0e917661f09eaa5fddf2
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="514" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="559" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -373,7 +379,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="Miut&#xe1;n &#xf6;t percet haladt&#xe1;l lassan az alag&#xfa;tban, egy k&#x151;asztalhoz &#xe9;rsz, &#xa;amely a bal oldali fal mellett &#xe1;ll. Hat doboz van rajta, egyik&#xfc;kre a &#xa;te neved festett&#xe9;k. &#xa;Ha kiakarod nyitni a dobozt, lapozz a 270-re. &#xa;Ha ink&#xe1;bb tov&#xe1;bb haladsz &#xe9;szak fel&#xe9;, lapozz a 66-ra."/>
+                    <Property name="text" type="java.lang.String" value="Miut&#xe1;n &#xf6;t percet haladt&#xe1;l lassan az alag&#xfa;tban, egy k&#x151;asztalhoz &#xe9;rsz, &#xa;amely a bal oldali fal mellett &#xe1;ll. Hat doboz van rajta, egyik&#xfc;kre a te neved festett&#xe9;k. &#xa;&#xa;Ha kiakarod nyitni a dobozt, lapozz a 270-re. &#xa;Ha ink&#xe1;bb tov&#xe1;bb haladsz &#xe9;szak fel&#xe9;, lapozz a 66-ra."/>
                   </Properties>
                 </Component>
               </SubComponents>
