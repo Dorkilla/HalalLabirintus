@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class halalLabirintus extends javax.swing.JFrame {
     //String elsozsoveg = ("")
+    //
     
     int felugroSzamolo = 0;
     
@@ -38,6 +39,7 @@ public class halalLabirintus extends javax.swing.JFrame {
                 "A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól."+System.lineSeparator()+"Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet: "+System.lineSeparator()+"- „Jól tetted. Legalább volt annyi eszed, hogy megállj és elfogadd az ajándékot. Most azt tanácsolom neked, "+System.lineSeparator()+"hogy keress és használj különféle tárgyakat, ha sikerrel akarsz áthaladni Halállabirintusomon.” "+System.lineSeparator()+"Azaláírás Szukumvit. Megjegyzed a tanácsot, apródarabokra téped a pergament, "+System.lineSeparator()+"és tovább mészészak felé.",
                 270, 78, "első",
                 79, "masodik"));
+        
         initComponents();
         jelenlegi = getOldalByOldalszam(1);
         txtaElso.setText(jelenlegi.GetSzoveg());
